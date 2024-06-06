@@ -1,4 +1,5 @@
 
+from os import wait
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -37,14 +38,19 @@ class User :
         driver.find_element(By.ID, "i0116").send_keys(username)
         driver.find_element(By.ID, "idSIButton9").click() 
         
-
+        print("username")
+        
+        time.sleep(2)
         waitUntilVis(By.ID, "i0118")
         driver.find_element(By.ID, "i0118").send_keys(password)
         
-        time.sleep(1)
-        driver.find_element(By.ID, "idSIButton9").click()
+        waitUntilVis(By.ID, "idSIButton9")
+        driver.find_element(By.ID, 'idSIButton9').click()
+        
+        print("password")
 
         waitUntilVis(By.XPATH, "/html/body/div/form[1]/div/div/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[1]/div")
+        
         driver.find_element(By.XPATH, "/html/body/div/form[1]/div/div/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/div[1]/div").click()
 
         # 2FA 
@@ -106,14 +112,20 @@ class User :
         return returnDic
 
 
+    def payStatementHistory(self) :
+        
+        self.driver.get("https://www.publix.org/passport/pay/statements")
 
+        self.waitUntilVis(By.ID, "DataTables_Table_0") 
 
+        data = self.driver.find_element(By.ID, "DataTables_Table_0") 
+        
+        data = data.text.replace("View", "").split("\n")
 
+        data = [i for i in data if i != ""]
 
-
-
-
-
-
+        self.driver.get("https://www.publix.org/passport")
+        
+        return data
 
 
