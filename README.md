@@ -22,7 +22,7 @@ from publix import User
 user = User('username', 'password')
 
 schedule = user.getSchedule() # returns hashmap
-payStatements = user.payStatementHistory()
+payStatements = user.payStatementHistory() # returns list
 
 
 
