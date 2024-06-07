@@ -12,6 +12,7 @@ I recomend editing the __init__() function in 'publix.py' file to fit your needs
 It will be shipped as a PIP package soon.
 For now clone and refer to as shown in example below and in 'main.py' file.
 
+Requirements, selenium
 
 # Usage
 
