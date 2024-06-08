@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ```python
 
-from publix import User
+from publixPassportAPI.publix import User
 
 user = User('username', 'password')
 
