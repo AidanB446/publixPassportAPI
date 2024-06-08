@@ -11,7 +11,7 @@ I recomend editing the __init__() function in 'publix.py' file to fit your needs
 
 ## with pip
 ```python
-pip install publixPassportAPI==0.0.2
+pip install publixPassportAPI==0.0.3
 
 ```
 ## with git clone
