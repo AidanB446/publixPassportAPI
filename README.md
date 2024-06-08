@@ -14,6 +14,14 @@ I recomend editing the __init__() function in 'publix.py' file to fit your needs
 pip install publixPassportAPI==0.0.2
 
 ```
+## with git clone
+```bash
+git clone https://github.com/AidanB446/publixPassportAPI
+
+pip install -r requirements.txt
+
+
+```
 
 # Usage
 
