@@ -9,11 +9,9 @@ I recomend editing the __init__() function in 'publix.py' file to fit your needs
 
 # Installation
 
-It will be shipped as a PIP package soon.
-For now clone and refer to as shown in example below and in 'main.py' file.
-
+## with pip
 ```python
-pip install -r requirements.txt
+pip install publixPassportAPI==0.0.2
 
 ```
 
