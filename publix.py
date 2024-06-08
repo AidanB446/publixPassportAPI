@@ -81,23 +81,38 @@ class User :
         self.waitUntilVis(By.ID, "scheduledweek")
         
         while True :
-            if len(self.driver.find_elements(By.XPATH, "/html/body/main/div[3]/div[1]/div/div[1]/div[3]/a/i")) < 1 :
-                break
-
             week = self.driver.find_element(By.ID, "scheduledweek").text
-
-            week = week.split("\n")[4:]
             
-            week = [i for i in week if i != "Show details" and i != "Schedule change"]
+            week = week.split("\n")
+
+            def filterFunc(inp) :
+                nonoList = ["Show", "Previous", "Next", "Week", "Total", "hrs"]
+                
+                for i in nonoList :
+                    if i in inp :
+                        return False
+                    
+                    else : 
+                        continue
+                
+                return True 
+            
+            week = list(filter(filterFunc, week)) 
             
             pointer = 1 
-
+            
             while pointer < len(week) - 1 :
                 returnDic[week[pointer - 1] + " " + week[pointer]] = week[pointer + 1]
                 pointer += 3
-            
+
+
+            if len(self.driver.find_elements(By.XPATH, "/html/body/main/div[3]/div[1]/div/div[1]/div[3]/a/i")) < 1 :
+                break
+          
             self.driver.find_element(By.XPATH, "/html/body/main/div[3]/div[1]/div/div[1]/div[3]/a/i").click()
             
+            time.sleep(0.5)
+
             while True :
 
                 if len(self.driver.find_elements(By.XPATH, "/html/body/div[10]")) > 0 :
