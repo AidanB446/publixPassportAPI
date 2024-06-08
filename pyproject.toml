@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "publixPassportAPI"
+version = "0.0.3"
+authors = [
+  { name="Aidan Bruner", email="aidanbruner789@gmail.com" },
+]
+description = "A python API to interact with Publix Passport API. Get your schedule, and recent pay statement history.   https://github.com/AidanB446/publixPassportAPI"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+	"selenium==4.21.0"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/AidanB446/publixPassportAPI"
+Issues = "https://github.com/AidanB446/publixPassportAPI/issues"
+
